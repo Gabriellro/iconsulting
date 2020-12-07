@@ -18,7 +18,7 @@ class TopCosultores extends StatelessWidget {
           ),
           child: SectionTitle(title: "Top Consultores", press: () {}),
         ),
-        SizedBox(height: getProportionateScreenHeight(20)),
+        SizedBox(height: getProportionateScreenHeight(10)),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           physics: BouncingScrollPhysics(),
@@ -129,7 +129,8 @@ class TopCosultoresItem extends StatelessWidget {
                               child: Center(
                                 child: Text(
                                   position,
-                                  style: kStyleTitleW,
+                                  style: kStyleSubTitle.copyWith(
+                                      color: kSofBackgroundColor),
                                 ),
                               ),
                             ),
@@ -149,11 +150,11 @@ class TopCosultoresItem extends StatelessWidget {
                 children: [
                   TextSpan(
                     text: "$name\n",
-                    style: kStyleTitle,
+                    style: kStyleSubTitle,
                   ),
                   TextSpan(
                     text: "$category",
-                    style: kStyleSubTitleP,
+                    style: kStyleSubCaption.copyWith(color: kPrimaryColor),
                   ),
                 ],
               ),

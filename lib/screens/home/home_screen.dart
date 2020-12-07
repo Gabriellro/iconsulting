@@ -35,12 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
         defaultSelectedIndex: 0,
       ),
       floatingActionButton: FloatingActionButton(
-        child: IconButton(
-          icon: Icon(
-            Icons.person_search_rounded,
-            size: 28,
-          ),
-          onPressed: () {},
+        child: Icon(
+          Icons.person_search_rounded,
+          size: 28,
         ),
         onPressed: () {},
         backgroundColor: kPrimaryColor,

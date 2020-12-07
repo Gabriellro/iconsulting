@@ -24,13 +24,6 @@ const kStyleDisplay2 = TextStyle(
   color: kPrimaryColor,
 );
 
-const kStyleDisplayS = TextStyle(
-  fontFamily: 'Quicksand',
-  fontSize: 29,
-  fontWeight: FontWeight.w700,
-  color: kSecondyColor,
-);
-
 const kStyleDisplay = TextStyle(
   fontFamily: 'Quicksand',
   fontSize: 26,
@@ -45,38 +38,11 @@ const kStyleTitle = TextStyle(
   color: kSecondyColor,
 );
 
-const kStyleTitleW = TextStyle(
-  fontFamily: 'Quicksand',
-  fontSize: 21,
-  fontWeight: FontWeight.w700,
-  color: kSofBackgroundColor,
-);
-
-const kStyleTitle20 = TextStyle(
-  fontFamily: 'Quicksand',
-  fontSize: 21,
-  fontWeight: FontWeight.w700,
-  color: kSecondyColor20,
-);
 const kStyleSubTitle = TextStyle(
   fontFamily: 'Quicksand',
   fontSize: 16,
   fontWeight: FontWeight.w700,
   color: kSecondyColor,
-);
-
-const kStyleSubTitle20 = TextStyle(
-  fontFamily: 'Quicksand',
-  fontSize: 16,
-  fontWeight: FontWeight.w700,
-  color: kSecondyColor20,
-);
-
-const kStyleSubTitleP = TextStyle(
-  fontFamily: 'Quicksand',
-  fontSize: 16,
-  fontWeight: FontWeight.w700,
-  color: kPrimaryColor,
 );
 
 const kStyleCaption = TextStyle(
@@ -86,13 +52,6 @@ const kStyleCaption = TextStyle(
   color: kPrimaryColor,
 );
 
-const kStyleCaptionS20 = TextStyle(
-  fontFamily: 'Quicksand',
-  fontSize: 14,
-  fontWeight: FontWeight.w700,
-  color: kSecondyColor20,
-);
-
 const kStyleSubCaption = TextStyle(
   fontFamily: 'Quicksand',
   fontSize: 12,
@@ -100,21 +59,18 @@ const kStyleSubCaption = TextStyle(
   color: kSecondyColor,
 );
 
-const kStyleSubCaption20 = TextStyle(
-  fontFamily: 'Quicksand',
-  fontSize: 14,
-  fontWeight: FontWeight.w700,
-  color: kSecondyColor20,
-);
-
-const kStyleSubCaptionW = TextStyle(
-  fontFamily: 'Quicksand',
-  fontSize: 14,
-  fontWeight: FontWeight.w700,
-  color: kBackgroundColor,
-);
-
 // animações
 const kAnimationDuration = Duration(milliseconds: 200);
 
 const defaultDuration = Duration(milliseconds: 250);
+
+final RegExp emailValidatorRegExp =
+    RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+const String kEmailNullError = "Please Enter your email";
+const String kInvalidEmailError = "Please Enter Valid Email";
+const String kPassNullError = "Please Enter your password";
+const String kShortPassError = "Password is too short";
+const String kMatchPassError = "Passwords don't match";
+const String kNamelNullError = "Please Enter your name";
+const String kPhoneNumberNullError = "Please Enter your phone number";
+const String kAddressNullError = "Please Enter your address";

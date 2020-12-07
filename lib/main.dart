@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:iconsulting/routes.dart';
-import 'screens/home/home_screen.dart';
+// import 'screens/home/home_screen.dart';
+import 'screens/sign_in/sing_in_screen.dart';
 import 'style_guide.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: theme(),
-      initialRoute: HomeScreen.routeName,
+      initialRoute: SignInScreen.routeName,
       routes: routes,
     );
   }

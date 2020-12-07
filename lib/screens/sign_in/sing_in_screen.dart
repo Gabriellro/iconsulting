@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:iconsulting/size_config.dart';
 
-import '../../size_config.dart';
 import 'components/body.dart';
 
-class SplashScreen extends StatelessWidget {
-  static String routeName = "/splash";
+class SignInScreen extends StatelessWidget {
+  static String routeName = "/sign_in";
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);

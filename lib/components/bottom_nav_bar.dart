@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:iconsulting/screens/home/home_screen.dart';
+import 'package:iconsulting/screens/sign_in/sing_in_screen.dart';
 
 import '../style_guide.dart';
 
@@ -6,6 +8,7 @@ class BottomNavBar extends StatefulWidget {
   final int defaultSelectedIndex;
   final Function(int) onChange;
   final List<IconData> iconList;
+
   BottomNavBar({
     this.defaultSelectedIndex = 0,
     @required this.iconList,
@@ -19,6 +22,7 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
   List<IconData> _iconList = [];
+
   @override
   void initState() {
     // ignore: todo
@@ -47,6 +51,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
         widget.onChange(index);
         setState(() {
           _selectedIndex = index;
+          index == 0
+              ? Navigator.pushNamed(context, HomeScreen.routeName)
+              : index == 1
+                  ? Navigator.pushNamed(context, SignInScreen.routeName)
+                  : Navigator.pushNamed(context, HomeScreen.routeName);
         });
       },
       child: Container(

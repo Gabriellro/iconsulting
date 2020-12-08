@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: buildSearchField(),
               ),
-              SizedBox(height: SizeConfig.screenHeight * 0.04),
+              SizedBox(height: SizeConfig.screenHeight * 0.02),
               Popular(),
               SizedBox(height: SizeConfig.screenHeight * 0.02),
               Categorias(),

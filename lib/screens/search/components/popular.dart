@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsulting/style_guide.dart';
 
 import '../../../components/section_title.dart';
 
@@ -15,7 +16,7 @@ class Popular extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: getProportionateScreenWidth(16),
           ),
-          child: SectionTitle(title: "Categorias", press: () {}),
+          child: SectionTitle(title: "Pesquisas populares", press: () {}),
         ),
         SizedBox(height: getProportionateScreenHeight(10)),
         SingleChildScrollView(
@@ -26,35 +27,30 @@ class Popular extends StatelessWidget {
               PopularItem(
                 image: "assets/images/avicii.jpg",
                 position: "1",
-                name: 'Jorge',
                 category: "finanças",
                 press: () {},
               ),
               PopularItem(
                 image: "assets/images/avicii.jpg",
                 position: "2",
-                name: 'Jorge',
                 category: "finanças",
                 press: () {},
               ),
               PopularItem(
                 image: "assets/images/avicii.jpg",
                 position: "3",
-                name: 'Jorge',
                 category: "finanças",
                 press: () {},
               ),
               PopularItem(
                 image: "assets/images/avicii.jpg",
                 position: "4",
-                name: 'Jorge',
                 category: "finanças",
                 press: () {},
               ),
               PopularItem(
                 image: "assets/images/avicii.jpg",
                 position: "5",
-                name: 'Jorge',
                 category: "finanças",
                 press: () {},
               ),
@@ -72,12 +68,11 @@ class PopularItem extends StatelessWidget {
     Key key,
     @required this.image,
     @required this.category,
-    @required this.name,
     @required this.press,
     @required this.position,
   }) : super(key: key);
 
-  final String name, category, image, position;
+  final String category, image, position;
   final GestureTapCallback press;
 
   @override
@@ -103,6 +98,23 @@ class PopularItem extends StatelessWidget {
                         fit: BoxFit.fitHeight,
                       ),
                     ),
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Text.rich(TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "$category\n",
+                            style: kStyleTitle.copyWith(
+                                color: kSofBackgroundColor),
+                          ),
+                          TextSpan(
+                            text: "$position consutores",
+                            style: kStyleCaption.copyWith(
+                                color: kSofBackgroundColor),
+                          )
+                        ],
+                      )),
+                    )
                   ],
                 ),
               ),

@@ -40,13 +40,19 @@ class _SignFormState extends State<SignForm> {
       child: Column(
         children: [
           buildEmailFormField(),
-          SizedBox(height: getProportionateScreenHeight(30)),
+          SizedBox(height: getProportionateScreenHeight(20)),
           buildPasswordFormField(),
           SizedBox(height: getProportionateScreenHeight(5)),
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(5)),
           Row(
             children: [
+              Text(
+                "Lembre de mim",
+                style: kStyleSubTitle.copyWith(
+                  color: kSecondyColor.withOpacity(0.20),
+                ),
+              ),
               Checkbox(
                 value: remember,
                 activeColor: kPrimaryColor,
@@ -56,21 +62,22 @@ class _SignFormState extends State<SignForm> {
                   });
                 },
               ),
-              Text("Remember me"),
               Spacer(),
               GestureDetector(
                 // onTap: () => Navigator.pushNamed(
                 //     context, ForgotPasswordScreen.routeName),
                 child: Text(
-                  "Forgot Password",
-                  style: TextStyle(decoration: TextDecoration.underline),
+                  "Esqueceu a senha?",
+                  style: kStyleSubTitle.copyWith(
+                    color: kSecondyColor.withOpacity(0.20),
+                  ),
                 ),
               )
             ],
           ),
           SizedBox(height: getProportionateScreenHeight(20)),
           DefaultButton(
-            text: "Continue",
+            text: "Entrar",
             press: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
@@ -85,7 +92,6 @@ class _SignFormState extends State<SignForm> {
 
   TextFormField buildPasswordFormField() {
     return TextFormField(
-      autofocus: true,
       obscureText: true,
       style: kStyleSubTitle,
       onSaved: (newValue) => password = newValue,
@@ -110,19 +116,25 @@ class _SignFormState extends State<SignForm> {
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.lock_rounded, color: kPrimaryColor),
         hintText: "Coloque sua senha",
-        hintStyle: kStyleSubTitle.copyWith(color: kSecondyColor20),
+        hintStyle: kStyleSubTitle.copyWith(
+          color: kSecondyColor.withOpacity(0.20),
+        ),
         filled: true,
         contentPadding: EdgeInsets.all(15),
         fillColor: kSofBackgroundColor,
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(100),
-          borderSide: BorderSide(color: Colors.red),
-        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(100),
           borderSide: BorderSide(color: Colors.transparent),
         ),
         focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(100),
+          borderSide: BorderSide(color: Colors.transparent),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(100),
+          borderSide: BorderSide(color: Colors.red),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(100),
           borderSide: BorderSide(color: Colors.transparent),
         ),
@@ -132,7 +144,6 @@ class _SignFormState extends State<SignForm> {
 
   TextFormField buildEmailFormField() {
     return TextFormField(
-      autofocus: true,
       style: kStyleSubTitle,
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => email = newValue,
@@ -157,19 +168,25 @@ class _SignFormState extends State<SignForm> {
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.mail_rounded, color: kPrimaryColor),
         hintText: "Digite seu e-mail",
-        hintStyle: kStyleSubTitle.copyWith(color: kSecondyColor20),
+        hintStyle: kStyleSubTitle.copyWith(
+          color: kSecondyColor.withOpacity(0.20),
+        ),
         filled: true,
         contentPadding: EdgeInsets.all(15),
         fillColor: kSofBackgroundColor,
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(100),
-          borderSide: BorderSide(color: Colors.red),
-        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(100),
           borderSide: BorderSide(color: Colors.transparent),
         ),
         focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(100),
+          borderSide: BorderSide(color: Colors.transparent),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(100),
+          borderSide: BorderSide(color: Colors.red),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(100),
           borderSide: BorderSide(color: Colors.transparent),
         ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../size_config.dart';
 import '../style_guide.dart';
 
 class NoAccountText extends StatelessWidget {
@@ -14,16 +13,14 @@ class NoAccountText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "Don’t have an account? ",
-          style: TextStyle(fontSize: getProportionateScreenWidth(16)),
+          "Não tem uma conta? ",
+          style: kStyleSubTitle.copyWith(color: kSecondyColor),
         ),
         GestureDetector(
           // onTap: () => Navigator.pushNamed(context, SignUpScreen.routeName),
           child: Text(
-            "Sign Up",
-            style: TextStyle(
-                fontSize: getProportionateScreenWidth(16),
-                color: kPrimaryColor),
+            "Inscrever-se",
+            style: kStyleSubTitle.copyWith(color: kPrimaryColor),
           ),
         ),
       ],

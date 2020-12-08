@@ -11,14 +11,12 @@ class Header extends StatelessWidget {
       children: [
         IconButton(
           icon: Icon(Icons.arrow_back_ios_rounded, color: kPrimaryColor),
-          onPressed: () {
-            // Navigator.pop(context);
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         Text(
-          "Login",
-          style: kStyleTitle.copyWith(color: kPrimaryColor),
-        )
+          "Pesquisar",
+          style: kStyleTitle.copyWith(color: kSecondyColor),
+        ),
       ],
     );
   }

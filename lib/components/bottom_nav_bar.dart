@@ -63,7 +63,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
         width: MediaQuery.of(context).size.width / _iconList.length - 25,
         child: Icon(
           icon,
-          color: index == _selectedIndex ? kPrimaryColor : kSecondyColor20,
+          color: index == _selectedIndex
+              ? kPrimaryColor
+              : kSecondyColor.withOpacity(0.20),
         ),
       ),
     );

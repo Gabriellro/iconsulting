@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsulting/components/no_account_text.dart';
 import 'package:iconsulting/components/social_card.dart';
 import 'package:iconsulting/style_guide.dart';
@@ -18,21 +19,24 @@ class Body extends StatelessWidget {
             horizontal: getProportionateScreenWidth(20),
           ),
           child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Column(
               children: [
                 Header(),
                 SizedBox(height: SizeConfig.screenHeight * 0.04),
-                Text("Welcome Back",
-                    style: kStyleDisplay2.copyWith(
-                      color: kSecondyColor20,
-                    )),
-                Text(
-                  "Sign in with your email and password  \nor continue with social media",
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                SvgPicture.asset("assets/icons/Grupo 2.svg"),
+                SizedBox(height: SizeConfig.screenHeight * 0.04),
                 SignForm(),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),
+                Container(
+                  height: getProportionateScreenHeight(2),
+                  width: getProportionateScreenWidth(250),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: kPrimaryColor,
+                  ),
+                ),
+                SizedBox(height: SizeConfig.screenHeight * 0.04),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

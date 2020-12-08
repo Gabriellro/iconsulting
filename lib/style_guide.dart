@@ -9,10 +9,7 @@ ThemeData theme() {
 
 // Cores //
 const kPrimaryColor = Color(0xFF00368F);
-const kPrimaryColor30 = Color(0x4DFD6D38);
 const kSecondyColor = Color(0xFF000000);
-const kSecondyColor20 = Color(0x33000000);
-const kTextColor = Color(0xFF3C4046);
 const kBackgroundColor = Color(0xFFFAFAFA);
 const kSofBackgroundColor = Color(0xFFF4F4F4);
 

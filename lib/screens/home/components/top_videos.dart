@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../../size_config.dart';
 import '../../../style_guide.dart';
@@ -16,13 +17,13 @@ class TopVideos extends StatelessWidget {
           child: Row(
             children: [
               TopVideosList(
-                image: "assets/images/Thumb_Californication.png",
+                url: "https://www.youtube.com/embed/hOsSDTxzrKQ",
                 category: "Californication (Aula de violão co...",
                 numOfBrands: "Red Hot Chili Peppers",
                 press: () {},
               ),
               TopVideosList(
-                image: "assets/images/Thumb_Wake_me_up.png",
+                url: "https://www.youtube.com/embed/hOsSDTxzrKQ",
                 category: "Wake Me Up (Aula de violão simp...",
                 numOfBrands: "Avicii",
                 press: () {},
@@ -39,13 +40,13 @@ class TopVideos extends StatelessWidget {
 class TopVideosList extends StatelessWidget {
   const TopVideosList({
     Key key,
-    @required this.image,
+    @required this.url,
     @required this.category,
     @required this.numOfBrands,
     @required this.press,
   }) : super(key: key);
 
-  final String category, image, numOfBrands;
+  final String category, url, numOfBrands;
   final GestureTapCallback press;
 
   @override
@@ -67,21 +68,9 @@ class TopVideosList extends StatelessWidget {
                     Container(
                       width: getProportionateScreenWidth(269),
                       height: getProportionateScreenWidth(160),
-                      child: Image.asset(
-                        image,
-                        fit: BoxFit.fitHeight,
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color(0xFF343434).withOpacity(0.4),
-                            Color(0xFF343434).withOpacity(0.15),
-                          ],
-                        ),
+                      child: WebView(
+                        initialUrl: 'https://www.youtube.com/embed/hOsSDTxzrKQ',
+                        javascriptMode: JavascriptMode.unrestricted,
                       ),
                     ),
                   ],

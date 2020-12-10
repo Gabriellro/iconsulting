@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsulting/screens/sign_up/sign_up_screen.dart';
 
 import '../style_guide.dart';
 
@@ -17,7 +18,7 @@ class NoAccountText extends StatelessWidget {
           style: kStyleSubTitle.copyWith(color: kSecondyColor),
         ),
         GestureDetector(
-          // onTap: () => Navigator.pushNamed(context, SignUpScreen.routeName),
+          onTap: () => Navigator.pushNamed(context, SignUpScreen.routeName),
           child: Text(
             "Inscrever-se",
             style: kStyleSubTitle.copyWith(color: kPrimaryColor),

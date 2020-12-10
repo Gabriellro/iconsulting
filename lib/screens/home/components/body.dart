@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsulting/screens/home/components/videos.dart';
 
 import '../../../size_config.dart';
 import '../../../style_guide.dart';
@@ -39,6 +40,7 @@ class Body extends StatelessWidget {
                     SizedBox(height: getProportionateScreenHeight(15)),
                     TopConsultores(),
                     SizedBox(height: getProportionateScreenHeight(15)),
+                    Videos(),
                     SizedBox(height: getProportionateScreenHeight(15)),
                   ],
                 )

@@ -12,26 +12,43 @@ class Body extends StatelessWidget {
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: getProportionateScreenWidth(20),
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Header(),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
-                SvgPicture.asset("assets/icons/Grupo 3.svg"),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
-                SignUpForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
-                Text(
-                  'Ao continuar, você confirma que concorda \n com nosso Termo e Condição',
-                  textAlign: TextAlign.center,
-                  style: kStyleCaption.copyWith(color: kSecondyColor),
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              Header(),
+              SizedBox(height: SizeConfig.screenHeight * 0.08),
+              SvgPicture.asset("assets/icons/Grupo 3.svg"),
+              SizedBox(height: SizeConfig.screenHeight * 0.08),
+              SignUpForm(),
+              SizedBox(height: SizeConfig.screenHeight * 0.04),
+              Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Ao clicar em continuar, você confirma que \n  ',
+                      style: kStyleCaption.copyWith(
+                        color: kSecondyColor,
+                      ),
+                    ),
+                    TextSpan(
+                      text: ' concorda com nosso ',
+                      style: kStyleCaption.copyWith(
+                        color: kSecondyColor,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Termo e Condição',
+                      style: kStyleCaption.copyWith(
+                        color: kSecondyColor,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+              SizedBox(height: SizeConfig.screenHeight * 0.03),
+            ],
           ),
         ),
       ),

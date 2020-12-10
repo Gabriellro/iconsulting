@@ -21,7 +21,10 @@ class NoAccountText extends StatelessWidget {
           onTap: () => Navigator.pushNamed(context, SignUpScreen.routeName),
           child: Text(
             "Inscrever-se",
-            style: kStyleSubTitle.copyWith(color: kPrimaryColor),
+            style: kStyleSubTitle.copyWith(
+              color: kPrimaryColor,
+              decoration: TextDecoration.underline,
+            ),
           ),
         ),
       ],

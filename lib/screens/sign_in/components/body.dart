@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsulting/components/no_account_text.dart';
 import 'package:iconsulting/components/social_card.dart';
-import 'package:iconsulting/style_guide.dart';
 
 import '../../../size_config.dart';
 import 'Header.dart';
@@ -14,50 +13,37 @@ class Body extends StatelessWidget {
     return SafeArea(
       child: SizedBox(
         width: double.infinity,
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: getProportionateScreenWidth(20),
-          ),
-          child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Column(
-              children: [
-                Header(),
-                SizedBox(height: SizeConfig.screenHeight * 0.04),
-                SvgPicture.asset("assets/icons/Grupo 2.svg"),
-                SizedBox(height: SizeConfig.screenHeight * 0.04),
-                SignForm(),
-                SizedBox(height: SizeConfig.screenHeight * 0.08),
-                Container(
-                  height: getProportionateScreenHeight(2),
-                  width: getProportionateScreenWidth(250),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    color: kPrimaryColor,
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              Header(),
+              SizedBox(height: SizeConfig.screenHeight * 0.08),
+              SvgPicture.asset("assets/icons/Grupo 2.svg"),
+              SizedBox(height: SizeConfig.screenHeight * 0.08),
+              SignForm(),
+              SizedBox(height: SizeConfig.screenHeight * 0.09),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SocialCard(
+                    icon: "assets/icons/google-icon.svg",
+                    press: () {},
                   ),
-                ),
-                SizedBox(height: SizeConfig.screenHeight * 0.04),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SocialCard(
-                      icon: "assets/icons/google-icon.svg",
-                      press: () {},
-                    ),
-                    SocialCard(
-                      icon: "assets/icons/facebook-2.svg",
-                      press: () {},
-                    ),
-                    SocialCard(
-                      icon: "assets/icons/twitter.svg",
-                      press: () {},
-                    ),
-                  ],
-                ),
-                SizedBox(height: getProportionateScreenHeight(20)),
-                NoAccountText(),
-              ],
-            ),
+                  SocialCard(
+                    icon: "assets/icons/facebook-2.svg",
+                    press: () {},
+                  ),
+                  SocialCard(
+                    icon: "assets/icons/twitter.svg",
+                    press: () {},
+                  ),
+                ],
+              ),
+              SizedBox(height: SizeConfig.screenHeight * 0.03),
+              NoAccountText(),
+              SizedBox(height: SizeConfig.screenHeight * 0.03),
+            ],
           ),
         ),
       ),

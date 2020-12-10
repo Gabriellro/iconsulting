@@ -5,8 +5,8 @@ import '../../../components/section_title.dart';
 import '../../../size_config.dart';
 import '../../../style_guide.dart';
 
-class TopCosultores extends StatelessWidget {
-  const TopCosultores({Key key}) : super(key: key);
+class TopConsultores extends StatelessWidget {
+  const TopConsultores({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,39 +24,39 @@ class TopCosultores extends StatelessWidget {
           physics: BouncingScrollPhysics(),
           child: Row(
             children: [
-              TopCosultoresItem(
-                image: "assets/images/avicii.jpg",
+              TopConsultoresItem(
+                image: "assets/images/image.jpg",
                 position: "1",
-                name: 'Jorge',
-                category: "finanças",
+                name: 'Claudio Jr.',
+                category: "Construção",
                 press: () {},
               ),
-              TopCosultoresItem(
-                image: "assets/images/avicii.jpg",
+              TopConsultoresItem(
+                image: "assets/images/image (1).jpg",
                 position: "2",
-                name: 'Jorge',
+                name: 'Jorge Rod...',
                 category: "finanças",
                 press: () {},
               ),
-              TopCosultoresItem(
-                image: "assets/images/avicii.jpg",
+              TopConsultoresItem(
+                image: "assets/images/image (2).jpg",
                 position: "3",
-                name: 'Jorge',
-                category: "finanças",
+                name: 'Roberto Rod...',
+                category: "Tecnologia da Infor...",
                 press: () {},
               ),
-              TopCosultoresItem(
-                image: "assets/images/avicii.jpg",
+              TopConsultoresItem(
+                image: "assets/images/image (3).jpg",
                 position: "4",
-                name: 'Jorge',
-                category: "finanças",
+                name: 'Judith Claudin...',
+                category: "Fotografa",
                 press: () {},
               ),
-              TopCosultoresItem(
-                image: "assets/images/avicii.jpg",
+              TopConsultoresItem(
+                image: "assets/images/image (4).jpg",
                 position: "5",
-                name: 'Jorge',
-                category: "finanças",
+                name: 'Audira Atira',
+                category: "Segurança",
                 press: () {},
               ),
               SizedBox(width: getProportionateScreenWidth(16)),
@@ -68,8 +68,8 @@ class TopCosultores extends StatelessWidget {
   }
 }
 
-class TopCosultoresItem extends StatelessWidget {
-  const TopCosultoresItem({
+class TopConsultoresItem extends StatelessWidget {
+  const TopConsultoresItem({
     Key key,
     @required this.image,
     @required this.category,

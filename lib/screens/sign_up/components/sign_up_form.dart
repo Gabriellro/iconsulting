@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsulting/components/default_button.dart';
 import 'package:iconsulting/components/form_error.dart';
+import 'package:iconsulting/screens/home/home_screen.dart';
 
 import '../../../size_config.dart';
 import '../../../style_guide.dart';
@@ -38,76 +39,64 @@ class _SignUpFormState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: [
-          buildEmailFormField(),
-          SizedBox(height: getProportionateScreenHeight(30)),
-          buildPasswordFormField(),
-          SizedBox(height: getProportionateScreenHeight(30)),
-          buildConformPassFormField(),
-          FormError(errors: errors),
-          Container(
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                ListTile(
-                  title:
-                      const Text('Microempreendedor', style: kStyleSubCaption),
-                  leading: Radio(
-                    value: SingingCharacter.microempreendedor,
-                    groupValue: _character,
-                    onChanged: (SingingCharacter value) {
-                      setState(() {
-                        _character = value;
-                      });
-                    },
-                  ),
-                ),
-                ListTile(
-                  title: const Text(
-                    'Consultor',
-                    style: kStyleSubCaption,
-                  ),
-                  leading: Radio(
-                    value: SingingCharacter.consultor,
-                    groupValue: _character,
-                    onChanged: (SingingCharacter value) {
-                      setState(() {
-                        _character = value;
-                      });
-                    },
-                  ),
-                ),
-              ],
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: getProportionateScreenWidth(20),
+      ),
+      child: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            buildEmailFormField(),
+            SizedBox(height: SizeConfig.screenHeight * 0.03),
+            buildPasswordFormField(),
+            SizedBox(height: SizeConfig.screenHeight * 0.03),
+            buildConformPassFormField(),
+            FormError(errors: errors),
+            SizedBox(height: SizeConfig.screenHeight * 0.02),
+            buildRadioTip(),
+            SizedBox(height: SizeConfig.screenHeight * 0.02),
+            DefaultButton(
+              text: "Continue",
+              press: () {
+                if (_formKey.currentState.validate()) {
+                  _formKey.currentState.save();
+                  Navigator.pushNamed(context, HomeScreen.routeName);
+                }
+              },
             ),
-          ),
-          SizedBox(height: getProportionateScreenHeight(40)),
-          DefaultButton(
-            text: "Continue",
-            press: () {
-              if (_formKey.currentState.validate()) {
-                _formKey.currentState.save();
-              }
-            },
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
-  // Radio buildRadio() {
-  //   return Radio(
-  //     value: SingingCharacter.jefferson,
-  //     groupValue: _character,
-  //     onChanged: (SingingCharacter value) {
-  //       setState(() {
-  //         _character = value;
-  //       });
-  //     },
-  //   );
-  // }
+  Row buildRadioTip() {
+    return Row(
+      children: [
+        Radio(
+          value: SingingCharacter.microempreendedor,
+          groupValue: _character,
+          onChanged: (SingingCharacter value) {
+            setState(() {
+              _character = value;
+            });
+          },
+        ),
+        Text("Microempreendedor"),
+        Radio(
+          value: SingingCharacter.consultor,
+          groupValue: _character,
+          onChanged: (SingingCharacter value) {
+            setState(() {
+              _character = value;
+            });
+          },
+        ),
+        Text("Consultor")
+      ],
+    );
+  }
 
   TextFormField buildConformPassFormField() {
     return TextFormField(

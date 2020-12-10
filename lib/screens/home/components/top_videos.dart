@@ -17,15 +17,15 @@ class TopVideos extends StatelessWidget {
           child: Row(
             children: [
               TopVideosList(
-                url: "https://www.youtube.com/embed/hOsSDTxzrKQ",
-                category: "Californication (Aula de violão co...",
-                numOfBrands: "Red Hot Chili Peppers",
+                url: "https://www.youtube.com/embed/n2KxXrJwSnk",
+                category: "Vídeo Institucional para Consulto...",
+                numOfBrands: "Gestão Empresarial",
                 press: () {},
               ),
               TopVideosList(
-                url: "https://www.youtube.com/embed/hOsSDTxzrKQ",
-                category: "Wake Me Up (Aula de violão simp...",
-                numOfBrands: "Avicii",
+                url: "https://www.youtube.com/embed/YhK0jVYq4IY",
+                category: "10 Dicas infalíveis para a gestão fi",
+                numOfBrands: "Primo Rico",
                 press: () {},
               ),
               SizedBox(width: getProportionateScreenWidth(16)),
@@ -59,8 +59,8 @@ class TopVideosList extends StatelessWidget {
           GestureDetector(
             onTap: press,
             child: SizedBox(
-              width: getProportionateScreenWidth(269),
-              height: getProportionateScreenWidth(160),
+              width: getProportionateScreenWidth(266),
+              height: getProportionateScreenWidth(150),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Stack(
@@ -69,7 +69,7 @@ class TopVideosList extends StatelessWidget {
                       width: getProportionateScreenWidth(269),
                       height: getProportionateScreenWidth(160),
                       child: WebView(
-                        initialUrl: 'https://www.youtube.com/embed/hOsSDTxzrKQ',
+                        initialUrl: url,
                         javascriptMode: JavascriptMode.unrestricted,
                       ),
                     ),

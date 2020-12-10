@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../size_config.dart';
 import '../../../style_guide.dart';
 import 'header.dart';
-import 'top_cosultores.dart';
+import 'top_consultores.dart';
 import 'top_videos.dart';
 
 class Body extends StatelessWidget {
@@ -37,7 +37,7 @@ class Body extends StatelessWidget {
                     SizedBox(height: getProportionateScreenHeight(20)),
                     TopVideos(),
                     SizedBox(height: getProportionateScreenHeight(15)),
-                    TopCosultores(),
+                    TopConsultores(),
                     SizedBox(height: getProportionateScreenHeight(15)),
                     SizedBox(height: getProportionateScreenHeight(15)),
                   ],

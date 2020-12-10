@@ -35,57 +35,48 @@ class _SignFormState extends State<SignForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: [
-          buildEmailFormField(),
-          SizedBox(height: getProportionateScreenHeight(20)),
-          buildPasswordFormField(),
-          SizedBox(height: getProportionateScreenHeight(5)),
-          FormError(errors: errors),
-          SizedBox(height: getProportionateScreenHeight(5)),
-          Row(
-            children: [
-              Text(
-                "Lembre de mim",
-                style: kStyleSubTitle.copyWith(
-                  color: kSecondyColor.withOpacity(0.20),
-                ),
-              ),
-              Checkbox(
-                value: remember,
-                activeColor: kPrimaryColor,
-                onChanged: (value) {
-                  setState(() {
-                    remember = value;
-                  });
-                },
-              ),
-              Spacer(),
-              GestureDetector(
-                // onTap: () => Navigator.pushNamed(
-                //     context, ForgotPasswordScreen.routeName),
-                child: Text(
-                  "Esqueceu a senha?",
-                  style: kStyleSubTitle.copyWith(
-                    color: kSecondyColor.withOpacity(0.20),
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: getProportionateScreenWidth(20),
+      ),
+      child: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            buildEmailFormField(),
+            SizedBox(height: SizeConfig.screenHeight * 0.03),
+            buildPasswordFormField(),
+            SizedBox(height: SizeConfig.screenHeight * 0.02),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                GestureDetector(
+                  // onTap: () => Navigator.pushNamed(
+                  //     context, ForgotPasswordScreen.routeName),
+                  child: Text(
+                    "Esqueceu a senha?",
+                    style: kStyleSubTitle.copyWith(
+                      color: kSecondyColor.withOpacity(0.20),
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
-                ),
-              )
-            ],
-          ),
-          SizedBox(height: getProportionateScreenHeight(20)),
-          DefaultButton(
-            text: "Entrar",
-            press: () {
-              if (_formKey.currentState.validate()) {
-                _formKey.currentState.save();
-                Navigator.pushNamed(context, HomeScreen.routeName);
-              }
-            },
-          ),
-        ],
+                )
+              ],
+            ),
+            SizedBox(height: SizeConfig.screenHeight * 0.02),
+            FormError(errors: errors),
+            SizedBox(height: SizeConfig.screenHeight * 0.02),
+            DefaultButton(
+              text: "Entrar",
+              press: () {
+                if (_formKey.currentState.validate()) {
+                  _formKey.currentState.save();
+                  Navigator.pushNamed(context, HomeScreen.routeName);
+                }
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

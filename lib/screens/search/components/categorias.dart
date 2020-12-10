@@ -25,37 +25,32 @@ class Categorias extends StatelessWidget {
           child: Row(
             children: [
               CategoriasItem(
-                image: "assets/images/avicii.jpg",
+                image: "assets/images/semana-de-financas.png",
                 position: "1",
-                name: 'Jorge',
-                category: "finanças",
+                category: "Finanças",
                 press: () {},
               ),
               CategoriasItem(
                 image: "assets/images/avicii.jpg",
                 position: "2",
-                name: 'Jorge',
                 category: "finanças",
                 press: () {},
               ),
               CategoriasItem(
                 image: "assets/images/avicii.jpg",
                 position: "3",
-                name: 'Jorge',
                 category: "finanças",
                 press: () {},
               ),
               CategoriasItem(
                 image: "assets/images/avicii.jpg",
                 position: "4",
-                name: 'Jorge',
                 category: "finanças",
                 press: () {},
               ),
               CategoriasItem(
                 image: "assets/images/avicii.jpg",
                 position: "5",
-                name: 'Jorge',
                 category: "finanças",
                 press: () {},
               ),
@@ -73,12 +68,11 @@ class CategoriasItem extends StatelessWidget {
     Key key,
     @required this.image,
     @required this.category,
-    @required this.name,
     @required this.press,
     @required this.position,
   }) : super(key: key);
 
-  final String name, category, image, position;
+  final String category, image, position;
   final GestureTapCallback press;
 
   @override
@@ -109,11 +103,18 @@ class CategoriasItem extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(top: getProportionateScreenHeight(10)),
-            child: Text(
-              "$category",
-              style: kStyleSubTitle.copyWith(color: kPrimaryColor),
+          SizedBox(height: getProportionateScreenHeight(5)),
+          Text(
+            category,
+            style: kStyleSubCaption,
+          ),
+          SizedBox(height: getProportionateScreenHeight(5)),
+          Container(
+            height: 5,
+            width: 5,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: position == '1' ? kPrimaryColor : Colors.transparent,
             ),
           ),
         ],

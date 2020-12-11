@@ -18,7 +18,10 @@ class Body extends StatelessWidget {
             children: [
               Header(),
               SizedBox(height: SizeConfig.screenHeight * 0.08),
-              SvgPicture.asset("assets/icons/Grupo 3.svg"),
+              SvgPicture.asset(
+                "assets/icons/sign_up.svg",
+                width: getProportionateScreenWidth(200),
+              ),
               SizedBox(height: SizeConfig.screenHeight * 0.08),
               SignUpForm(),
               SizedBox(height: SizeConfig.screenHeight * 0.04),

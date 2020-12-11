@@ -56,7 +56,7 @@ class _SignFormState extends State<SignForm> {
                   child: Text(
                     "Esqueceu a senha?",
                     style: kStyleSubTitle.copyWith(
-                      color: kSecondyColor.withOpacity(0.20),
+                      color: kPrimaryColor,
                       decoration: TextDecoration.underline,
                     ),
                   ),

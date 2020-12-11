@@ -12,7 +12,7 @@ class Header extends StatelessWidget {
         IconButton(
           icon: Icon(Icons.arrow_back_ios_rounded, color: kPrimaryColor),
           onPressed: () {
-            // Navigator.pop(context);
+            Navigator.pop(context);
           },
         ),
         Text(
